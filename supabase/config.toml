@@ -1,0 +1,6 @@
+project_id = "stride"
+[functions.generate-avatar]
+verify_jwt = false
+[functions.delete-avatar]
+verify_jwt = false
+# Each function verifies the JWT against auth.getUser before any privileged action.
