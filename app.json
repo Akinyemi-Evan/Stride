@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "Stride",
+    "slug": "stride-walking-game",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "stride",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/stride-icon.png",
+    "splash": {
+      "image": "./assets/stride-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#244c3a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stridegame.app"
+    },
+    "android": {
+      "package": "com.stridegame.app",
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.health.READ_STEPS"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/stride-icon.png",
+        "backgroundColor": "#244c3a"
+      }
+    },
+    "web": {
+      "favicon": "./assets/stride-favicon.png",
+      "name": "Stride \u2014 your everyday adventure",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose your own photo to create your Stride avatar.",
+          "cameraPermission": "Take a selfie for your Stride avatar.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-secure-store",
+      "react-native-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      [
+        "@kingstinct/react-native-healthkit",
+        {
+          "NSHealthShareUsageDescription": "Stride reads your daily step total from Apple Health to update your walking goal and game avatar.",
+          "NSHealthUpdateUsageDescription": false,
+          "background": false
+        }
+      ]
+    ]
+  }
+}
